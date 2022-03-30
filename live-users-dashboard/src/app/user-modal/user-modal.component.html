@@ -1,0 +1,6 @@
+<dialog [open]="show">
+  <h1>Username: {{user.userName}}</h1>
+  <h1>Registration time: {{user.regTime.toLocaleString()}}</h1>
+  <h1>Login count: {{user.logCount}}</h1>
+  <button (click)="onCloseModal()">Close</button>
+</dialog>

@@ -1,0 +1,43 @@
+<app-user-modal class="info-modal" [show]="showModal" [user]="userInModal" (newCloseModalEvent)="closeModal($event)"></app-user-modal>
+<div *ngIf="userName !==''">
+  <div class="container">
+    <button class="btn btn-primary d-block w-50 m-auto" (click)="logout()">LOGOUT</button>
+  </div>
+  <h1>Welcome {{userName}}</h1>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" style="color:white;">Live Users Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+  <h1></h1>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <div class="container">
+    <div class="row">
+      <app-user-card class="col-md-6 col-xl-3" *ngFor="let user of users"
+                            [user]="user" (newItemEvent)="getUserData($event)"></app-user-card>
+      <div class="col-md-6 col-xl-3">
+      </div>
+<div class="modal body">
+      <form #InfoForm="ngForm">
+        <div class="form-group">
+          <label for="userName">Username :</label>
+          <input type="text" ngModel name="name" class="form-control" id="userName" placeholder="userName" required>
+        </div>
+        <div class="form-group">
+          <label for="regTime">Register time :</label>
+          <input type="regTime" ngModel name="regTime" class="form-control" id="regTime" placeholder="regTime" required>
+        </div>
+        <div class="form-group">
+          <label for="logCount">Logins count :</label>
+          <input type="logCount" ngModel name="logCount" class="form-control" id="logCount" placeholder="logCount" required>
+        </div>
+      </form>
+    </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="userName === ''">
+  <p>You must be registered to reach this page</p>
+  <p>Click <a routerLink="/signup">here</a>to register</p>
+</div>

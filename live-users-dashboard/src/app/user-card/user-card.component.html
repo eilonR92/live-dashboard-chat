@@ -1,0 +1,23 @@
+<div>
+  <div class="card m-b-30">
+    <div class="card-body row">
+      <div class="col-6 card-title align-self-center mb-0">
+        <h5>{{user.userName}}</h5>
+        <p class="m-0"></p>
+      </div>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><i class="fa fa-user float-right"></i>Username : {{user.userName}}</li>
+      <li class="list-group-item"><i class="fa fa-clock-o float-right"></i>Login Time : {{date}}</li>
+      <li class="list-group-item"><i class="fa fa-history float-right"></i>Last update : {{date}}</li>
+      <li class="list-group-item"><i class="fa fa-globe float-right"></i>IP : {{user.ip}}</li>
+      <li class="list-group-item"><i class="fa fa-globe float-right"></i>Status: {{user.online ? 'Online' : 'Offline'}}</li>
+    </ul>
+    <div class="card-body">
+      <ul class="social-links list-inline mb-0">
+        <li class="list-inline-item" id="infoUserModal"><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="" data-original-title="Info" (click)="onOpenModal($event)"> <i class="fa fa-info"></i></a></li>
+        <div *ngIf="show"></div>
+      </ul>
+    </div>
+  </div>
+</div>
